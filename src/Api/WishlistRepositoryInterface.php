@@ -22,7 +22,15 @@ interface WishlistRepositoryInterface
      * @return \Mediaman\WishlistApi\Api\WishlistInterface
      * @throws NoSuchEntityException
      */
-    public function getCurrent(): WishlistInterface;
+    public function getCurrentWishlist(): WishlistInterface;
+
+    /**
+     * Get the customers wishlist by $customerId
+     * @param integer $customerId (0 - current customer wishlist)
+     * @return \Mediaman\WishlistApi\Api\WishlistInterface
+     * @throws NoSuchEntityException
+     */
+    public function getCustomerWishlist(integer $customeId): WishlistInterface;
 
     /**
      * Add an item from the customers wishlist
@@ -30,7 +38,7 @@ interface WishlistRepositoryInterface
      * @param string $sku
      * @return bool
      */
-    public function addItem(string $sku): bool;
+    public function addItem(string $sku, integer $customeId = 0): bool;
 
     /**
      * Remove an item from the customers wishlist
@@ -39,5 +47,5 @@ interface WishlistRepositoryInterface
      * @return boolean
      * @throws NoSuchEntityException
      */
-    public function removeItem(int $itemId): bool;
+    public function removeItem(int $itemId, integer $customeId = 0): bool;
 }

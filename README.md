@@ -28,15 +28,26 @@ $ ./bin/magento setup:upgrade
 
 ### Usage
 
-The module adds three new API endpoints that allow you to interact with the Magento 2 wishlist.
+The module adds six new API endpoints that allow you to interact with the Magento 2 wishlist.
 
+You can define $customerId to request wishlist of specific user.
 If there's no customer session available, the current customer is received through the customer token.
+
+**GET** `/rest/V1/wishlist` - Get the wishlist for the current user.
+**GET** `/rest/V1/customer/:customerId/wishlist` - Get the wishlist for the user identified by $customerId.
+**PUT** `/rest/V1/wishlist/:sku` - Add product to wishlist of current user
+**PUT** `/rest/V1/wishlist/customer/:customerId/:sku` - Add product to wishlist of specific user by $customerId
+**DELETE** `/rest/V1/wishlist/:itemId` - Remove an item from current user wishlist.
+**DELETE** `/rest/V1/wishlist/customer/:customerId/:itemId` - Remove an item from specific user wishlist.
+
+### Examples
+
 
 **GET** `/rest/V1/wishlist`
 
-Get the wishlist for the user.
+Get the wishlist for the current user.
 
-**Example:** 
+**Example:**
 
 ```
 $ curl -X GET http://magento.example.com/rest/V1/wishlist --header "Authorization: Bearer pbhercbtk6dd3eatf1pyx8jj45avjluu"

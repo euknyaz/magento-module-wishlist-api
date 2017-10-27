@@ -158,19 +158,19 @@ class WishlistRepositoryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @test ::getCurrent
+     * @test ::getCurrentWishlist
      */
-    public function testGetCurrent()
+    public function testGetCurrentWishlist()
     {
         $this->itShouldLoadAWishlist();
 
-        $this->assertSame($this->wishlistMock, $this->subject->getCurrent());
+        $this->assertSame($this->wishlistMock, $this->subject->getCurrentWishlist());
     }
 
     /**
      * @test ::getCurrent with a customer without an existing wishlist
      */
-    public function testGetCurrentNoPreExistingWishlist()
+    public function testGetCurrentWishlistNoPreExistingWishlist()
     {
         $customerIdMock = 42;
         $this->customerSessionMock->expects(static::once())
@@ -195,13 +195,13 @@ class WishlistRepositoryTest extends \PHPUnit_Framework_TestCase
             ->method('save')
             ->with($this->wishlistMock);
 
-        $this->assertSame($this->wishlistMock, $this->subject->getCurrent());
+        $this->assertSame($this->wishlistMock, $this->subject->getCurrentWishlist());
     }
 
     /**
-     * @test ::getCurrent without a customer session
+     * @test ::getCurrentWishlist without a customer session
      */
-    public function testGetCurrentWithoutSession()
+    public function testGetCurrentWishlistWithoutSession()
     {
         $tokenPayload = 'dnyuht5e0f6fgcwk7q90blkr88l4g3pa';
         $this->httpMock->expects(static::once())
@@ -218,7 +218,7 @@ class WishlistRepositoryTest extends \PHPUnit_Framework_TestCase
             ->method('getCustomerId')
             ->willReturn($customerIdMock);
 
-        $this->assertSame($this->wishlistMock, $this->subject->getCurrent());
+        $this->assertSame($this->wishlistMock, $this->subject->getCurrentWishlist());
     }
 
     /**

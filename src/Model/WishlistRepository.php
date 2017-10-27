@@ -80,22 +80,49 @@ class WishlistRepository implements WishlistRepositoryInterface
     /**
      * @inheritdoc
      */
-    public function getCurrent(): WishlistInterface
+    private function getCurrentCustomerId()
     {
-        $customerId = $this->customerSession->getCustomerId();
+      // Retrieve $customerId from session
+      $customerId = $this->customerSession->getCustomerId();
+
+      // If there is no $customerId in session,
+      // try to authenticate and retrieve from token
+      if (!$customerId) {
+          $authorizationHeader = $this->http->getHeader('Authorization');
+
+          $tokenParts = explode('Bearer', $authorizationHeader);
+          $tokenPayload = trim(array_pop($tokenParts));
+
+          /** @var Token $token */
+          $token = $this->tokenFactory->create();
+          $token->loadByToken($tokenPayload);
+
+          $customerId = $token->getCustomerId();
+      }
+      return $customerId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getCurrentWishlist(): WishlistInterface
+    {
+        $customerId = 0; // retrieve current customer id
+        return $this->getCustomerWishlist($customerId);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getCustomerWishlist(integer $customerId): WishlistInterface
+    {
         if (!$customerId) {
-            $authorizationHeader = $this->http->getHeader('Authorization');
-
-            $tokenParts = explode('Bearer', $authorizationHeader);
-            $tokenPayload = trim(array_pop($tokenParts));
-
-            /** @var Token $token */
-            $token = $this->tokenFactory->create();
-            $token->loadByToken($tokenPayload);
-
-            $customerId = $token->getCustomerId();
+            $customerId = $this->getCurrentCustomerId();
         }
 
+        // TODO: verify that current session has admin access permissions
+        // to access any customer record
+
+        // TODO: Verify that customer with $customerId really exists
         /** @var Wishlist $wishlist */
         $wishlist = $this->wishlistFactory->create();
         $wishlist->loadByCustomerId($customerId);
@@ -111,10 +138,10 @@ class WishlistRepository implements WishlistRepositoryInterface
     /**
      * @inheritdoc
      */
-    public function addItem(string $sku): bool
+    public function addItem(string $sku, integer $customerId = 0): bool
     {
         $product = $this->productRepository->get($sku);
-        $wishlist = $this->getCurrent();
+        $wishlist = $this->getCustomerWishlist($customerId); // current by default
 
         $wishlist->addNewItem($product);
 
@@ -124,9 +151,9 @@ class WishlistRepository implements WishlistRepositoryInterface
     /**
      * @inheritdoc
      */
-    public function removeItem(int $itemId): bool
+    public function removeItem(int $itemId, integer $customerId = 0): bool
     {
-        $wishlist = $this->getCurrent();
+        $wishlist = $this->getCustomerWishlist($customerId); // current by default
 
         $item = $wishlist->getItem($itemId);
         if (!$item) {

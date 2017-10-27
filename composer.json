@@ -1,5 +1,5 @@
 {
-  "name": "mediaman/module-wishlist-api",
+  "name": "euknyaz/module-wishlist-api",
   "description": "Magento 2 module that provides an API to interact with the Wishlist module.",
   "license": "MIT",
   "type": "magento2-module",

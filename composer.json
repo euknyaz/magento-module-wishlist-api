@@ -3,7 +3,7 @@
   "description": "Magento 2 module that provides an API to interact with the Wishlist module.",
   "license": "MIT",
   "type": "magento2-module",
-  "homepage": "http://mediaman.de/",
+  "homepage": "http://euknyaz.com/",
   "keywords": [
     "composer-installer",
     "magento",
@@ -52,7 +52,7 @@
       "src/registration.php"
     ],
     "psr-4": {
-      "Mediaman\\WishlistApi\\": "src/"
+      "Euknyaz\\WishlistApi\\": "src/"
     }
   }
 }

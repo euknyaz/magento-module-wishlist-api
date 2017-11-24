@@ -4,13 +4,13 @@
  * @see LICENSE.txt
  */
 
-namespace Mediaman\WishlistApi\Api;
+namespace Euknyaz\WishlistApi\Api;
 
 use Magento\Framework\Exception\NoSuchEntityException;
 
 /**
  * Interface WishlistRepositoryInterface
- * @package Mediaman\WishlistApi\Api
+ * @package Euknyaz\WishlistApi\Api
  * @api
  */
 interface WishlistRepositoryInterface
@@ -19,7 +19,7 @@ interface WishlistRepositoryInterface
     /**
      * Get the current customers wishlist
      *
-     * @return \Mediaman\WishlistApi\Api\WishlistInterface
+     * @return \Euknyaz\WishlistApi\Api\WishlistInterface
      * @throws NoSuchEntityException
      */
     public function getCurrentWishlist(): WishlistInterface;
@@ -27,7 +27,7 @@ interface WishlistRepositoryInterface
     /**
      * Get the customers wishlist by $customerId
      * @param integer $customerId (0 - current customer wishlist)
-     * @return \Mediaman\WishlistApi\Api\WishlistInterface
+     * @return \Euknyaz\WishlistApi\Api\WishlistInterface
      * @throws NoSuchEntityException
      */
     public function getCustomerWishlist(integer $customeId): WishlistInterface;

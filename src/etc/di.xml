@@ -5,10 +5,10 @@
  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Mediaman\WishlistApi\Api\WishlistRepositoryInterface"
-                type="Mediaman\WishlistApi\Model\WishlistRepository"/>
-    <preference for="Mediaman\WishlistApi\Api\WishlistInterface"
-                type="Mediaman\WishlistApi\Model\Wishlist"/>
-    <preference for="Mediaman\WishlistApi\Api\ItemInterface"
-                type="Mediaman\WishlistApi\Model\Item"/>
+    <preference for="Euknyaz\WishlistApi\Api\WishlistRepositoryInterface"
+                type="Euknyaz\WishlistApi\Model\WishlistRepository"/>
+    <preference for="Euknyaz\WishlistApi\Api\WishlistInterface"
+                type="Euknyaz\WishlistApi\Model\Wishlist"/>
+    <preference for="Euknyaz\WishlistApi\Api\ItemInterface"
+                type="Euknyaz\WishlistApi\Model\Item"/>
 </config>

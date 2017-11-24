@@ -4,7 +4,7 @@
  * @see LICENSE.txt
  */
 
-namespace Mediaman\WishlistApi\Model;
+namespace Euknyaz\WishlistApi\Model;
 
 use Magento\Catalog\Api\Data\ProductInterface;
 use Magento\Catalog\Api\ProductRepositoryInterface;
@@ -15,11 +15,11 @@ use Magento\Integration\Model\Oauth\TokenFactory;
 use Magento\Wishlist\Model\Item;
 use Magento\Wishlist\Model\ResourceModel\Item as ItemResource;
 use Magento\Wishlist\Model\ResourceModel\Wishlist as WishlistResource;
-use Mediaman\WishlistApi\Api\WishlistInterface;
+use Euknyaz\WishlistApi\Api\WishlistInterface;
 
 /**
  * Class WishlistRepositoryTest
- * @package Mediaman\WishlistApi
+ * @package Euknyaz\WishlistApi
  */
 class WishlistRepositoryTest extends \PHPUnit_Framework_TestCase
 {

@@ -4,13 +4,13 @@
  * @see LICENSE.txt
  */
 
-namespace Mediaman\WishlistApi\Api;
+namespace Euknyaz\WishlistApi\Api;
 
 use Magento\Wishlist\Model\Item;
 
 /**
  * Interface WishlistInterface
- * @package Mediaman\WishlistApi\Api
+ * @package Euknyaz\WishlistApi\Api
  * @api
  */
 interface WishlistInterface
@@ -26,7 +26,7 @@ interface WishlistInterface
     /**
      * Get the wishlist items
      *
-     * @return \Mediaman\WishlistApi\Api\ItemInterface[]
+     * @return \Euknyaz\WishlistApi\Api\ItemInterface[]
      */
     public function getItems();
 

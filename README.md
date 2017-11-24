@@ -17,7 +17,7 @@ $ composer require "mediaman/module-wishlist-api: 1.*"
 Enable the module
 
 ```
-$ ./bin/magento module:enable Mediaman_WishlistApi
+$ ./bin/magento module:enable Euknyaz_WishlistApi
 ```
 
 Upgrade your Magento database schemas

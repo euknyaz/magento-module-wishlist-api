@@ -4,13 +4,13 @@
  * @see LICENSE.txt
  */
 
-namespace Mediaman\WishlistApi\Api;
+namespace Euknyaz\WishlistApi\Api;
 
 use Magento\Catalog\Api\Data\ProductInterface;
 
 /**
  * Interface ItemInterface
- * @package Mediaman\WishlistApi\Api
+ * @package Euknyaz\WishlistApi\Api
  * @api
  */
 interface ItemInterface

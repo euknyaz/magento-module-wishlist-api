@@ -4,13 +4,13 @@
  * @see LICENSE.txt
  */
 
-namespace Mediaman\WishlistApi\Model;
+namespace Euknyaz\WishlistApi\Model;
 
-use Mediaman\WishlistApi\Api\WishlistInterface;
+use Euknyaz\WishlistApi\Api\WishlistInterface;
 
 /**
  * Class Wishlist
- * @package Mediaman\WishlistApi\Model
+ * @package Euknyaz\WishlistApi\Model
  */
 class Wishlist extends \Magento\Wishlist\Model\Wishlist implements WishlistInterface
 {

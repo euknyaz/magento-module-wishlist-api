@@ -6,6 +6,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Mediaman_WishlistApi',
+    'Euknyaz_WishlistApi',
     __DIR__
 );

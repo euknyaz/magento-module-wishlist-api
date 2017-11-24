@@ -4,7 +4,7 @@
  * @see LICENSE.txt
  */
 
-namespace Mediaman\WishlistApi\Model;
+namespace Euknyaz\WishlistApi\Model;
 
 use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\Customer\Model\Session as CustomerSession;
@@ -12,12 +12,12 @@ use Magento\Framework\App\Request\Http;
 use Magento\Integration\Model\Oauth\Token;
 use Magento\Integration\Model\Oauth\TokenFactory;
 use Magento\Wishlist\Model\ResourceModel\Item as ItemResource;
-use Mediaman\WishlistApi\Api\WishlistInterface;
-use Mediaman\WishlistApi\Api\WishlistRepositoryInterface;
+use Euknyaz\WishlistApi\Api\WishlistInterface;
+use Euknyaz\WishlistApi\Api\WishlistRepositoryInterface;
 
 /**
  * Class WishlistRepository
- * @package Mediaman\WishlistApi\Model
+ * @package Euknyaz\WishlistApi\Model
  */
 class WishlistRepository implements WishlistRepositoryInterface
 {

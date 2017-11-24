@@ -2,16 +2,12 @@
 
 Adds an API to interact with the Magento2 wishlist.
 
-[![Build Status](https://travis-ci.org/mediamanDE/magento-module-wishlist-api.svg?branch=master)](https://travis-ci.org/mediamanDE/magento-module-wishlist-api)
-
-![Demo GIF](https://raw.githubusercontent.com/mediamanDE/magento-module-wishlist-api/master/demo.gif)
-
 ## Getting Started
 
 Install the module via composer
 
 ```
-$ composer require "mediaman/module-wishlist-api: 1.*"
+$ composer require "euknyaz/magento-module-wishlist-api: dev-master"
 ```
 
 Enable the module
@@ -75,4 +71,4 @@ $ curl -X DELETE http://magento.example.com/rest/V1/wishlist/1 --header "Authori
 
 ## License
 
-MIT © [mediaman GmbH](mailto:hallo@mediaman.de)
+MIT 

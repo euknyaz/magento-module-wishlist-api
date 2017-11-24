@@ -32,8 +32,8 @@
   },
   "minimum-stability": "dev",
   "require": {
-    "magento/framework": "101.*",
-    "magento/module-integration": "101.*",
+    "magento/framework": "100.*|101.*",
+    "magento/module-integration": "100.*|101.*",
     "php": ">=7.0"
   },
   "require-dev": {

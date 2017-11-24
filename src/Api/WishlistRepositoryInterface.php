@@ -26,11 +26,11 @@ interface WishlistRepositoryInterface
 
     /**
      * Get the customers wishlist by $customerId
-     * @param integer $customerId (0 - current customer wishlist)
+     * @param int $customerId (0 - current customer wishlist)
      * @return \Euknyaz\WishlistApi\Api\WishlistInterface
      * @throws NoSuchEntityException
      */
-    public function getCustomerWishlist(integer $customeId): WishlistInterface;
+    public function getCustomerWishlist(int $customeId): WishlistInterface;
 
     /**
      * Add an item from the customers wishlist
@@ -38,7 +38,7 @@ interface WishlistRepositoryInterface
      * @param string $sku
      * @return bool
      */
-    public function addItem(string $sku, integer $customeId = 0): bool;
+    public function addItem(string $sku, int $customeId): bool;
 
     /**
      * Remove an item from the customers wishlist
@@ -47,5 +47,5 @@ interface WishlistRepositoryInterface
      * @return boolean
      * @throws NoSuchEntityException
      */
-    public function removeItem(int $itemId, integer $customeId = 0): bool;
+    public function removeItem(int $itemId, int $customeId): bool;
 }

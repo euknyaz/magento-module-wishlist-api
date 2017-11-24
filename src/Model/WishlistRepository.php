@@ -113,7 +113,7 @@ class WishlistRepository implements WishlistRepositoryInterface
     /**
      * @inheritdoc
      */
-    public function getCustomerWishlist(integer $customerId): WishlistInterface
+    public function getCustomerWishlist(int $customerId): WishlistInterface
     {
         if (!$customerId) {
             $customerId = $this->getCurrentCustomerId();
@@ -138,7 +138,7 @@ class WishlistRepository implements WishlistRepositoryInterface
     /**
      * @inheritdoc
      */
-    public function addItem(string $sku, integer $customerId = 0): bool
+    public function addItem(string $sku, int $customerId = 0): bool
     {
         $product = $this->productRepository->get($sku);
         $wishlist = $this->getCustomerWishlist($customerId); // current by default
@@ -151,7 +151,7 @@ class WishlistRepository implements WishlistRepositoryInterface
     /**
      * @inheritdoc
      */
-    public function removeItem(int $itemId, integer $customerId = 0): bool
+    public function removeItem(int $itemId, int $customerId = 0): bool
     {
         $wishlist = $this->getCustomerWishlist($customerId); // current by default
 
